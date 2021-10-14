@@ -1,0 +1,20 @@
+<%- include('../include/head.ejs') %>
+  <div class="container">
+    <% if (errorMessage) { %>
+      <%- include('../include/message.ejs') %>
+        <% } %>
+          <h1 class="text-center mt-4 mb-4">Login</h1>
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+  </div>
+  <%- include('../include/footer.ejs') %>

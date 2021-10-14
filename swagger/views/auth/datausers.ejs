@@ -1,0 +1,36 @@
+<%- include('../include/head.ejs') %>
+  <div class="container mx-auto">
+    <div class="text-center my-3">
+      <h1>USER GAME TABLE</h1>
+    </div>
+    <div class="card my-4 mx-4">
+      <div class="table-responsive-md mx-5 mx-sm-0 mx-md-2">
+        <table class="table table-sm table-striped">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(let user of users){ %>
+                <tr>
+                  <td>
+                    <%= user.id %>
+                  <td>
+                    <%= user.email %>
+                  </td>
+                  <td>
+                    <%= user.role %>
+                  </td>
+                </tr>
+                <% } %>
+            </tbody>
+          </table>
+        </table>
+      </div>
+    </div>
+  </div>
+  <%- include('../include/footer.ejs') %>

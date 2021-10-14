@@ -1,0 +1,27 @@
+<%- include('../include/head.ejs') %>
+  <div class="container">
+    <% if(errorMessage){ %>
+      <%- include('../include/message.ejs') %>
+        <% } %>
+          <h1 class="text-center mt-4 mb-4">Sign Up</h1>
+          <form action="/signup" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" value="<%=oldInput.email%>"
+                class="form-control <%=validationError.find(e => e.param === 'email') ? 'is-invalid' : '' %>">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" value="<%=oldInput.password%>"
+                class="form-control <%=validationError.find(e => e.param === 'password') ? 'is-invalid' : '' %>">
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" value="<%=oldInput.confirmPassword%>"
+                class="form-control <%=validationError.find(e => e.param === 'confirmPassword') ? 'is-invalid' : '' %>">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+  </div>
+  <%- include('../include/footer.ejs') %>
